@@ -1,0 +1,45 @@
+Version 1.1:
+
+- Scene management 
+- Bigger vehicles like trucks & buses switch line
+
+Version 1.2:
+
+- Car boost
+- Car & boost sounds
+- Improved car spawner
+- Car rotates when switching line (click/touch controls)
+
+Version 1.3:
+
+- Simple keyboard controls (in each scene, open the game manager, check 'Keyboard' and type in the keys)
+- Simple vibration effect on collision (can be disabled on the cars. Automatically disabled when using keyboard)
+
+Version 1.4:
+
+- Cars can drive in two directions (please see the documentation)
+
+Version 2.0:
+
+- Player cars rotate based on their movement
+- All cars have rotating wheels.
+- Motorcycle + driver ragdoll
+- Simple cinematic camera intro
+- Rivers & lakes with boats 
+- Road manager to control road transitions
+- Roadside objects can be different after each road transition
+- Near miss bonus
+- Bonus for driving in the wrong direction
+- New main menu/garage design
+- Few UI updates
+- Warning when buying a new car
+- Blinking lights when switching lines
+- Unity Ads integration
+- Automatically switching controls based on build platform
+- Screen transitions
+
+Version 2.1:
+
+- Object pooling added
+- Coins & coin magnet
+- Script updates
