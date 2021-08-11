@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>352625928403-02dv87g2evp9bm6842daf7uafhqfpj9q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.352625928403-02dv87g2evp9bm6842daf7uafhqfpj9q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB30LB7ux6vHMHDoGvlDDu0g_BihnziuU0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>352625928403</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.google.TrafficRacer</string>
+	<key>PROJECT_ID</key>
+	<string>motorcycle-d6719</string>
+	<key>STORAGE_BUCKET</key>
+	<string>motorcycle-d6719.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:352625928403:ios:2ab66a609402fd6c76cc26</string>
+</dict>
+</plist>
