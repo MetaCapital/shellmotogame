@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "352625928403",
+    "project_id": "motorcycle-d6719",
+    "storage_bucket": "motorcycle-d6719.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352625928403:android:66ff39ad3f79d2d176cc26",
+        "android_client_info": {
+          "package_name": "com.google.TrafficRacer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352625928403-29g7rkvmdl0dqjbq18bibr0ra18eoihh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA59w6gg7uGx8JkQfrqgMM8pTmLXaypYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352625928403-29g7rkvmdl0dqjbq18bibr0ra18eoihh.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "352625928403-02dv87g2evp9bm6842daf7uafhqfpj9q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.google.TrafficRacer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
