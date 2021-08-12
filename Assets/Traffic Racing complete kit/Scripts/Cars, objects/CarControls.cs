@@ -2,7 +2,7 @@
 using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.SocialPlatforms;
 #if UNITY_ADS
 using UnityEngine.Advertisements;
 #endif
@@ -380,6 +380,17 @@ public class CarControls : MonoBehaviour {
 		if(Manager.distance > PlayerPrefs.GetFloat("bestDistance")){
 			PlayerPrefs.SetFloat("bestDistance", Manager.distance);
 			Manager.bestDistanceLabel.SetActive(true);
+
+			Debug.Log("Car Controls > Sahbi we are just playing games");
+			if (Social.Active.localUser.authenticated)
+			{
+
+				string leaderboardID = "CgkIj4jx5YUNEAIQBg";
+				string achievementID = "CgkIj4jx5YUNEAIQAg";
+				long distance = (long)(Manager.distance*100);
+				Social.ReportProgress(achievementID, 100f, success => { });
+				Social.ReportScore(distance, leaderboardID, success => { Debug.Log("Car Controls > Successful"); });
+			}
 		}
 		
 		//destroy car
