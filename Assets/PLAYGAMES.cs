@@ -17,21 +17,22 @@ public class PLAYGAMES : MonoBehaviour
 {
     public Text playerScore;
     //public  Text playerScore;
-    string leaderboardID = "CgkIj4jx5YUNEAIQAQ";
+    string leaderboardID = "CgkIj4jx5YUNEAIQBg";
     string achievementID = "CgkIj4jx5YUNEAIQAg";
     public static PlayGamesPlatform platform;
 
     void Start()
     {
-        PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => {
-           print("instance");
-        });
+        
         if (platform == null)
         {
             PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
             PlayGamesPlatform.InitializeInstance(config);
             PlayGamesPlatform.DebugLogEnabled = true;
             platform = PlayGamesPlatform.Activate();
+            PlayGamesPlatform.Instance.Authenticate(SignInInteractivity.CanPromptOnce, (result) => {
+                print("instance");
+            });
         }
 
         Social.Active.localUser.Authenticate(success =>
@@ -47,16 +48,16 @@ public class PLAYGAMES : MonoBehaviour
         });
         UnlockAchievement();
     }
-
+    public void Login() {
+        this.Start();
+    }
     public void AddScoreToLeaderboard()
     {
         if (Social.Active.localUser.authenticated)
         {
             
-            int coin = PlayerPrefs.GetInt("coins");
-
-
-            Social.ReportScore(coin, leaderboardID, success => { });
+            long bestDistance = (long)(PlayerPrefs.GetFloat("bestDistance")*100);
+            Social.ReportScore(bestDistance, leaderboardID, success => { Debug.Log("PlayGames > Successful"); });
         }
     }
 
