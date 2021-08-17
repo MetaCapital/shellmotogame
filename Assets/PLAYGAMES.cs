@@ -6,6 +6,7 @@ using GooglePlayGames.BasicApi;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using TMPro;
 using System.Linq;
 //using System.Collections.Generic;
@@ -19,8 +20,8 @@ public class PLAYGAMES : MonoBehaviour
     //public  Text playerScore;
     //string leaderboardID = "CgkIj4jx5YUNEAIQBg";
     //string achievementID = "CgkIj4jx5YUNEAIQAg";
-    string leaderboardID = "CgkI08WD3dYdEAIQAg";
-    string achievementID = "CgkI08WD3dYdEAIQAQ";
+    string leaderboardID = "CgkI08WD3dYdEAIQAQ";
+    string achievementID = "CgkI08WD3dYdEAIQAg";
     public static PlayGamesPlatform platform;
 
     void Start()
@@ -56,8 +57,7 @@ public class PLAYGAMES : MonoBehaviour
     public void AddScoreToLeaderboard()
     {
         if (Social.Active.localUser.authenticated)
-        {
-            
+        {   
             long bestDistance = (long)(PlayerPrefs.GetFloat("bestDistance")*100);
             Social.ReportScore(bestDistance, leaderboardID, success => { Debug.Log("PlayGames > Successful"); });
         }
@@ -69,6 +69,7 @@ public class PLAYGAMES : MonoBehaviour
         {
             platform.ShowLeaderboardUI();
         }
+        
     }
 
     public void ShowAchievements()
