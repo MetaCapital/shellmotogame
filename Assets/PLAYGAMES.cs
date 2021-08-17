@@ -17,8 +17,10 @@ public class PLAYGAMES : MonoBehaviour
 {
     public Text playerScore;
     //public  Text playerScore;
-    string leaderboardID = "CgkIj4jx5YUNEAIQBg";
-    string achievementID = "CgkIj4jx5YUNEAIQAg";
+    //string leaderboardID = "CgkIj4jx5YUNEAIQBg";
+    //string achievementID = "CgkIj4jx5YUNEAIQAg";
+    string leaderboardID = "CgkI08WD3dYdEAIQAg";
+    string achievementID = "CgkI08WD3dYdEAIQAQ";
     public static PlayGamesPlatform platform;
 
     void Start()

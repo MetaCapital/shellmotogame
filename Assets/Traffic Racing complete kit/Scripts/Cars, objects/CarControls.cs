@@ -385,8 +385,10 @@ public class CarControls : MonoBehaviour {
 			if (Social.Active.localUser.authenticated)
 			{
 
-				string leaderboardID = "CgkIj4jx5YUNEAIQBg";
-				string achievementID = "CgkIj4jx5YUNEAIQAg";
+				//string leaderboardID = "CgkIj4jx5YUNEAIQBg";
+				//string achievementID = "CgkIj4jx5YUNEAIQAg";
+				string leaderboardID = "CgkI08WD3dYdEAIQAg";
+				string achievementID = "CgkI08WD3dYdEAIQAQ";
 				long distance = (long)(Manager.distance*100);
 				Social.ReportProgress(achievementID, 100f, success => { });
 				Social.ReportScore(distance, leaderboardID, success => { Debug.Log("Car Controls > Successful"); });
