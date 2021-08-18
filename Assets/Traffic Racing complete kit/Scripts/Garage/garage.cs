@@ -36,16 +36,23 @@ public class garage : MonoBehaviour {
 	AudioSource buttonAudio;
 	AudioSource buttonAudioShort;
 	Vector3 newCarLabelStartPos;
-	
+
 	bool fading;
 	bool newCarFade;
-    private void Awake()
+	
+
+
+	private void Awake()
     {
       
     }
+    
     void Start(){
-        boostpanel.SetActive(false);
+
+
+		boostpanel.SetActive(false);
         confirmpanel.SetActive(false);
+		
         fill1.SetActive(false);
         fill2.SetActive(false);
         fill3.SetActive(false);
@@ -86,6 +93,7 @@ public class garage : MonoBehaviour {
 	
 	newCarLabel = GameObject.Find("New car label");
 	carName = GameObject.Find("car name");
+	
 	newCarLabelStartPos = newCarLabel.transform.position;
 	newCarLabel.SetActive(false);
 	
@@ -98,8 +106,9 @@ public class garage : MonoBehaviour {
 	}
 	
 	void Update(){
-	//if start panel is fading out and not done yet, decrease its alpha by time.deltatime
-	if(fading && startPanel.GetComponent<CanvasGroup>().alpha > 0){
+		
+		//if start panel is fading out and not done yet, decrease its alpha by time.deltatime
+		if (fading && startPanel.GetComponent<CanvasGroup>().alpha > 0){
 		startPanel.GetComponent<CanvasGroup>().alpha -= Time.deltaTime * 2;
            
         }
@@ -199,15 +208,24 @@ public class garage : MonoBehaviour {
     public void boostpanell()
     {
         boostpanel.SetActive(true);
-       
-      
     }
-    private  int chosen;
+    private int chosen;
+	private int remaining_coins;
     public GameObject confirmpanel;
     public void choosetoconfirm(int r)
     {
-        chosen = r;
-        confirmpanel.SetActive(true);
+		// price of each boost
+		int[] boost_price = new int[] { 150, 500, 1500 };
+		// choice collected from the Boost Panel
+		int choice = r;
+		// computer remaining coins
+		remaining_coins = PlayerPrefs.GetInt("coins") - boost_price[choice - 1];
+		
+		if (remaining_coins >= 0)
+		{   //set boost choice
+			chosen = choice;
+			confirmpanel.SetActive(true);
+		}
     }
     public void noboost()
     {
@@ -216,24 +234,19 @@ public class garage : MonoBehaviour {
     }
     public void boost()
     {
-        
 
-
-        switch (chosen)
+		PlayerPrefs.SetInt("coins", remaining_coins);
+		coinsLabel.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("coins");
+		
+		switch (chosen)
         {
             case 1:
-                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 10);
-                coinsLabel.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("coins");
                 fill1.SetActive(true);
-                break;
+                break;	
             case 2:
-                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 30);
-                coinsLabel.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("coins");
                 fill2.SetActive(true);
                 break;
             case 3:
-                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 90);
-                coinsLabel.GetComponent<Text>().text = "" + PlayerPrefs.GetInt("coins");
                 fill3.SetActive(true);
                 break;
            
