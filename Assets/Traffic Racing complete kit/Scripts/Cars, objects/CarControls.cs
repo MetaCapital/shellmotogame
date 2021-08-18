@@ -7,6 +7,7 @@ using UnityEngine.SocialPlatforms;
 using UnityEngine.Advertisements;
 #endif
 
+
 public class CarControls : MonoBehaviour {
 	
 	//variables visible in the inspector
@@ -69,7 +70,11 @@ public class CarControls : MonoBehaviour {
 		}
 	}
 	
-	void Start(){	
+
+
+	void Start(){
+
+
 	//find the smoke particles and set them not active
 	smoke = transform.Find("smoke").gameObject;	
 	smoke.SetActive(false);	
@@ -375,22 +380,15 @@ public class CarControls : MonoBehaviour {
 		//save extra coins and than set the player to be game over
 		PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + (int)newCoins);
 		Manager.gameOver = true;
-	
+		
 		//save distance if it's better than current best and set label active
 		if(Manager.distance > PlayerPrefs.GetFloat("bestDistance")){
 			PlayerPrefs.SetFloat("bestDistance", Manager.distance);
 			Manager.bestDistanceLabel.SetActive(true);
-
-			Debug.Log("Car Controls > Sahbi we are just playing games");
-			if (Social.Active.localUser.authenticated)
-			{
-
-				string leaderboardID = "CgkIj4jx5YUNEAIQBg";
-				string achievementID = "CgkIj4jx5YUNEAIQAg";
-				long distance = (long)(Manager.distance*100);
-				Social.ReportProgress(achievementID, 100f, success => { });
-				Social.ReportScore(distance, leaderboardID, success => { Debug.Log("Car Controls > Successful"); });
-			}
+			PlayGamesConnector.AddScoreToLeaderboard();
+			yield return new WaitForSeconds(0.5f);
+			if (!PlayGamesConnector._AddScoreToLeaderboard_Success)
+				Debug.Log("*** Score Adding Failed");
 		}
 		
 		//destroy car
