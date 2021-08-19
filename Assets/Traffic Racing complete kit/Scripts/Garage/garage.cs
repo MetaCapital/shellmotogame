@@ -39,17 +39,19 @@ public class garage : MonoBehaviour {
 
 	bool fading;
 	bool newCarFade;
+
+
 	
-
-
 	private void Awake()
     {
       
     }
-    
+	public void connecPlayGames() {
+		PlayGamesConnector.connect();
+	}
     void Start(){
-
-
+		// connects to Google Play Services at the Game Start
+		
 		boostpanel.SetActive(false);
         confirmpanel.SetActive(false);
 		

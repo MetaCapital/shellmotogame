@@ -71,10 +71,12 @@ public class Manager : MonoBehaviour {
 	#if UNITY_ADS
 	Advertisement.Initialize (gameID);
 	#endif
-	
+
+    
 	qualityDropdown = GameObject.Find("Quality dropdown").GetComponent<Dropdown>();
 	
-	if(PlayerPrefs.GetInt("QualityLevelChanged") == 1){
+	connectLeaderBoard();
+	if (PlayerPrefs.GetInt("QualityLevelChanged") == 1){
 		QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("QualityLevel"));
 		qualityDropdown.value = PlayerPrefs.GetInt("QualityLevel");
 	}
@@ -336,7 +338,16 @@ public class Manager : MonoBehaviour {
 		StartCoroutine(openScene("Garage"));
        
     }
-	
+	public void connectLeaderBoard() {
+		PlayGamesConnector.connect();
+	}
+
+	public void ShowLeaderBoard()
+	{
+		PlayGamesConnector.ShowLeaderboard();
+	}
+
+
 	IEnumerator openScene(string scene){
 		screenTransition.SetBool("transition", true);
 		yield return new WaitForSeconds(1);
