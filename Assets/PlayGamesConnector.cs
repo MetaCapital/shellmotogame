@@ -9,10 +9,8 @@ public static class PlayGamesConnector
 {
 
 	//public  Text playerScore;
-	//private static string leaderboardID = "CgkIj4jx5YUNEAIQBg";
-	//private static string achievementID = "CgkIj4jx5YUNEAIQAg";
-	private static string leaderboardID = "CgkI08WD3dYdEAIQAQ";
-	private static string achievementID = "CgkI08WD3dYdEAIQAg";
+	private static string leaderboardID = "CgkIj4jx5YUNEAIQBg";
+	private static string achievementID = "CgkIj4jx5YUNEAIQAg";
 
 	public static PlayGamesPlatform platform;
 	public static bool connectionSuccess;
