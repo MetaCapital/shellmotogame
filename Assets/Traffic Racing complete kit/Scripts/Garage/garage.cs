@@ -47,7 +47,11 @@ public class garage : MonoBehaviour {
       
     }
 	public void connecPlayGames() {
-		PlayGamesConnector.connect();
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            PlayGamesConnector.connect();
+        }
+		
 	}
     void Start(){
 		// connects to Google Play Services at the Game Start
